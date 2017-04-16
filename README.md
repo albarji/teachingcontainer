@@ -6,7 +6,7 @@ Includes
 
 * Miniconda Python 3
 * scikit-learn 0.18.1
-* keras 2
+* keras 2 with Tensorflow backend
 * matplotlib and seaborn
 * Jupyter notebook (launched at start)
 
@@ -14,7 +14,7 @@ The container is also prepared for mapping the container X11 output to that of t
 
 ## Prerequisites
 
-* <a href=https://www.docker.com/>docker</a>
+You will need <a href=https://www.docker.com/>Docker Community Edition</a>. Working under a Linux operative system is strongly recommended, but if you wish to work under Windows or Mac it might be best for you to install <a href=https://www.docker.com/products/docker-toolbox>Docker Toolbox</a>.
 
 ## Usage
 
