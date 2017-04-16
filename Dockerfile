@@ -1,17 +1,10 @@
 FROM ubuntu:14.04
 
 # Install system tools
-RUN apt-get update --fix-missing && \
-    apt-get install -y \
+RUN apt-get update && apt-get install -y \
         wget \
-        bzip2 \
-        ca-certificates \
-        libglib2.0-0 \
-        libxext6 \
-        libsm6 \
-        libxrender1 \
-        git \
-        vim
+        python3-tk \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install miniconda
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
@@ -50,3 +43,4 @@ WORKDIR /home/developer
 
 # Start jupyter
 ENTRYPOINT jupyter notebook --ip='*' --port=8888 --no-browser
+
