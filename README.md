@@ -20,7 +20,7 @@ The container is also prepared for mapping the container X11 output to that of t
 
 Run
 
-    docker run --rm -it -p 8888:8888 -v $(pwd):/home/developer -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unixteaching-container
+    docker run --rm -it -p 8888:8888 -v $(pwd):/home/developer -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix teaching-container
 
 in a terminal while standing at the folder with the downloaded lab assignments. Then follow the link to the Jupyter notebook service that will appear in the terminal.
 
