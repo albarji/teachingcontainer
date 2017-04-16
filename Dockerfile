@@ -1,8 +1,17 @@
 FROM ubuntu:14.04
 
 # Install system tools
-RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
-    libglib2.0-0 libxext6 libsm6 libxrender1 git
+RUN apt-get update --fix-missing && \
+    apt-get install -y \
+        wget \
+        bzip2 \
+        ca-certificates \
+        libglib2.0-0 \
+        libxext6 \
+        libsm6 \
+        libxrender1 \
+        git \
+        vim
 
 # Install miniconda
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
@@ -32,6 +41,9 @@ RUN export uid=1000 gid=1000 && \
     chown ${uid}:${gid} -R /home/developer
 USER developer
 ENV HOME /home/developer
+
+# Set Tensorflow backend in keras
+COPY keras.json /home/developer/.keras/keras.json
 
 # Prepare labs folder
 WORKDIR /home/developer
